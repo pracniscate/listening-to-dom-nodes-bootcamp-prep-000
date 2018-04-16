@@ -19,6 +19,12 @@
       })
 
       /*pressing "enter" prints 13 in console; pressing "a" prints 65; etc.*/
+      
+      const input = document.querySelector('input')
+ 
+      input.addEventListener('keydown', function(e) {
+        console.log(e.which)
+      })
 
       const divs = document.querySelectorAll('div')
  
