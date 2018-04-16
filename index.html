@@ -9,6 +9,61 @@
        min-height: 12px;
      }
     </style>
+    <script>
+      /* new event - addEventListener */
+      
+      const main = document.getElementById('main')
+ 
+      main.addEventListener('click', function(event) {
+        alert('I was clicked!')
+      })
+
+      /*pressing "enter" prints 13 in console; pressing "a" prints 65; etc.*/
+      
+      const input = document.querySelector('input')
+ 
+      input.addEventListener('keydown', function(e) {
+        console.log(e.which)
+      })
+
+      /* prevent the input from receiving "g"s */
+      
+      const input = document.querySelector('input')
+ 
+      input.addEventListener('keydown', function(e) {
+        if (e.which === 71) {
+          return e.preventDefault()
+        }
+      })
+      
+      /* capturing */
+      
+      divs = document.querySelectorAll('div')
+ 
+      function capture(e) {
+        console.log(this.firstChild.nodeValue.trim() + ' captured')
+      }
+ 
+      for (let i = 0; i < divs.length; i++) {
+        // set the third argument to `true`!
+        divs[i].addEventListener('click', capture, true)
+      }
+
+      /* bubble & stopPropagation() - one log statement */
+
+      const divs = document.querySelectorAll('div')
+ 
+      function bubble(e) {
+        // stop! that! propagation!
+        e.stopPropagation()
+ 
+        console.log(this.firstChild.nodeValue.trim() + ' bubbled')
+      }
+ 
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('click', bubble)
+      }
+    </script>
   </head>
 
   <body>
