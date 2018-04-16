@@ -10,7 +10,15 @@
      }
     </style>
     <script>
+      /* new event - addEventListener */
       
+      const main = document.getElementById('main')
+ 
+      main.addEventListener('click', function(event) {
+        alert('I was clicked!')
+      })
+
+
       const divs = document.querySelectorAll('div')
  
       function bubble(e) {
